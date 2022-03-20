@@ -1,16 +1,16 @@
 import React from 'react'
 import { useForm } from '@inertiajs/inertia-react'
 
-const ForgotPassword = () => {
+const ForgotPassword = (props) => {
 
-    const {processing, setData, post, reset} = useForm({email: ''})
+    const { errors, status } = props
+
+    const {processing, setData, post} = useForm({email: ''})
     
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        post(route('password.email'), {
-            onFinish: () => reset(),
-        })
+        post(route('password.email'))
     }
 
     return (
@@ -26,12 +26,37 @@ const ForgotPassword = () => {
                                         <h2 className="text-uppercase text-center my-5">Forgot Pasword</h2>
                                         <p class="text-muted">Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</p>
                                     </div>
+                                    
+                                    {
+                                        Object.keys(errors).length > 0
+                                         && (
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <ul>
+                                                {Object.keys(errors).map(key => <li key={key}>{errors[key]}</li>)}
+                                                </ul>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        )
+                                    }
+
+                                    {
+                                        status && (
+                                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                {status}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        )
+                                    }
 
                                     <form onSubmit={handleSubmit}>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control form-control-lg" onChange={e => setData("email", e.target.value)} autoComplete="username" />
+                                            <input type="email" name="email" class="form-control form-control-lg" onChange={e => setData("email", e.target.value)} autofocus />
                                         </div>
 
                                         <div class="d-flex justify-content-center">

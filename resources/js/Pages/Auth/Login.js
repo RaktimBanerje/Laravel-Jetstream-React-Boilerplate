@@ -18,6 +18,7 @@ const Login = (props) => {
       ... data,
       remember: data.remember ? 'on' : ''
     }))
+    
     post(route('login'), {
       onFinish: () => reset('password')
     })

@@ -2116,22 +2116,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ForgotPassword = function ForgotPassword() {
+var ForgotPassword = function ForgotPassword(props) {
+  var errors = props.errors,
+      status = props.status;
+
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     email: ''
   }),
       processing = _useForm.processing,
       setData = _useForm.setData,
-      post = _useForm.post,
-      reset = _useForm.reset;
+      post = _useForm.post;
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    post(route('password.email'), {
-      onFinish: function onFinish() {
-        return reset();
-      }
-    });
+    post(route('password.email'));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
@@ -2166,7 +2164,31 @@ var ForgotPassword = function ForgotPassword() {
     className: "text-uppercase text-center my-5"
   }, "Forgot Pasword"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     "class": "text-muted"
-  }, "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+  }, "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.")), Object.keys(errors).length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "alert alert-danger alert-dismissible fade show",
+    role: "alert"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, Object.keys(errors).map(function (key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+      key: key
+    }, errors[key]);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), status && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "alert alert-success alert-dismissible fade show",
+    role: "alert"
+  }, status, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "class": "form-outline mb-4"
@@ -2179,7 +2201,7 @@ var ForgotPassword = function ForgotPassword() {
     onChange: function onChange(e) {
       return setData("email", e.target.value);
     },
-    autoComplete: "username"
+    autofocus: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "class": "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -2512,9 +2534,134 @@ var Register = function Register(props) {
 /*!**************************************************!*\
   !*** ./resources/js/Pages/Auth/ResetPassword.js ***!
   \**************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 
+
+var ResetPassword = function ResetPassword(props) {
+  var email = props.email,
+      token = props.token,
+      errors = props.errors,
+      status = props.status;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    token: token,
+    email: email,
+    password: '',
+    password_confirmation: ''
+  }),
+      processing = _useForm.processing,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      reset = _useForm.reset;
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    post(route('password.update'), {
+      onFinish: function onFinish() {
+        return reset('password', 'password_confirmation');
+      }
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "vh-100 bg-image",
+    style: {
+      backgroundImage: "url(".concat('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp', ")")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "mask d-flex align-items-center h-100 gradient-custom-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "container h-100"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "row d-flex justify-content-center align-items-center h-100"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col-12 col-md-9 col-lg-7 col-xl-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card",
+    style: {
+      borderRadius: "15px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card-body p-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col d-flex flex-column align-items-center justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/img/brand/logo.png",
+    style: {
+      height: "62px"
+    },
+    alt: "..."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    className: "text-uppercase text-center my-5"
+  }, "Reset Password")), Object.keys(errors).length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "alert alert-danger alert-dismissible fade show",
+    role: "alert"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, Object.keys(errors).map(function (key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+      key: key
+    }, errors[key]);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), status && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "alert alert-success alert-dismissible fade show",
+    role: "alert"
+  }, status, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "New Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    name: "password",
+    "class": "form-control form-control-lg",
+    onChange: function onChange(e) {
+      return setData("password", e.target.value);
+    },
+    autoComplete: "new-password"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "Confirm Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    name: "password_confirmation",
+    "class": "form-control form-control-lg",
+    onChange: function onChange(e) {
+      return setData("password_confirmation", e.target.value);
+    },
+    autoComplete: "new-password"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "class": "btn btn-success btn-block btn-lg gradient-custom-4 text-body",
+    disabled: processing
+  }, "Reset Password"))))))))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResetPassword);
 
 /***/ }),
 
@@ -2532,9 +2679,92 @@ var Register = function Register(props) {
 /*!************************************************!*\
   !*** ./resources/js/Pages/Auth/VerifyEmail.js ***!
   \************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 
+
+var VerifyEmail = function VerifyEmail(props) {
+  console.log(props);
+  var status = props.status;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+      processing = _useForm.processing,
+      post = _useForm.post;
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    post(route('verification.send'));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "vh-100 bg-image",
+    style: {
+      backgroundImage: "url(".concat('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp', ")")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "mask d-flex align-items-center h-100 gradient-custom-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "container h-100"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "row d-flex justify-content-center align-items-center h-100"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col-12 col-md-9 col-lg-7 col-xl-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card",
+    style: {
+      borderRadius: "15px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "card-body p-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col d-flex flex-column align-items-center justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/img/brand/logo.png",
+    style: {
+      height: "62px"
+    },
+    alt: "..."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    className: "text-uppercase text-center my-5"
+  }, "Verify Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    "class": "text-muted"
+  }, "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.")), status == "verification-link-sent" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "alert alert-success alert-dismissible fade show",
+    role: "alert"
+  }, "A new verification link has been sent to the email address you provided during registration.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "alert",
+    "aria-label": "Close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    "aria-hidden": "true"
+  }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "class": "btn btn-success btn-block btn-lg gradient-custom-4 text-body text-uppercase",
+    disabled: processing
+  }, "Resend Verification Email")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "mt-2 d-flex justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route('logout'),
+    method: "post",
+    as: "button",
+    "class": "btn btn-secondary text-right text-muted mt-2"
+  }, "Log Out"))))))))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VerifyEmail);
 
 /***/ }),
 
