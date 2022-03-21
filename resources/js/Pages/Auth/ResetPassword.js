@@ -5,7 +5,7 @@ const ResetPassword = (props) => {
 
   const { email, token, errors, status } = props
   
-  const {processing, setData, post, reset } = useForm({
+  const { processing, data, setData, post, reset } = useForm({
     token: token,
     email: email,
     password: '',
@@ -60,12 +60,28 @@ const ResetPassword = (props) => {
 
                     <div class="form-outline mb-4">
                       <label class="form-label">New Password</label>
-                      <input type="password" name="password" class="form-control form-control-lg" onChange={e => setData("password", e.target.value)} autoComplete="new-password" />
+                      <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-control form-control-lg"
+                        value={data.password} 
+                        onChange={e => setData("password", e.target.value)} 
+                        autoComplete="new-password" 
+                      />
                     </div>
 
                     <div class="form-outline mb-4">
                       <label class="form-label">Confirm Password</label>
-                      <input type="password" name="password_confirmation" class="form-control form-control-lg" onChange={e => setData("password_confirmation", e.target.value)} autoComplete="new-password" />
+                      <input 
+                        type="password" 
+                        id="password_confirmation" 
+                        name="password_confirmation" 
+                        class="form-control form-control-lg" 
+                        value={data.password_confirmation}
+                        onChange={e => setData("password_confirmation", e.target.value)} 
+                        autoComplete="new-password" 
+                      />
                     </div>
 
                     <div class="d-flex justify-content-center">

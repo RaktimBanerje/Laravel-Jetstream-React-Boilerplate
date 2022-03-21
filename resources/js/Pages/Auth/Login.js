@@ -5,7 +5,7 @@ const Login = (props) => {
 
   const { errors, canResetPassword, status } = props
   
-  const {processing, setData, post, reset, transform} = useForm({
+  const {processing, data, setData, post, reset, transform} = useForm({
     email: '',
     password: '',
     remember: false
@@ -64,16 +64,35 @@ const Login = (props) => {
 
                     <div class="form-outline mb-4">
                       <label class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control form-control-lg" onChange={e => setData("email", e.target.value)} autoComplete="username" />
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value={data.email}
+                        class="form-control form-control-lg" 
+                        onChange={e => setData("email", e.target.value)} 
+                        autoComplete="username" 
+                      />
                     </div>
 
                     <div class="form-outline mb-4">
                       <label class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control form-control-lg" onChange={e => setData("password", e.target.value)} autoComplete="new-password" />
+                      <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        value={data.password}
+                        class="form-control form-control-lg" 
+                        onChange={e => setData("password", e.target.value)} 
+                        autoComplete="new-password" 
+                      />
                     </div>
 
                     <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" disabled={processing}>Login</button>
+                      <button 
+                        type="submit" 
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" 
+                        disabled={processing}>Login</button>
                     </div>
                     
                     {canResetPassword && <Link href={route("password.request")} class="text-right text-muted mt-2">Forgot password?</Link>}

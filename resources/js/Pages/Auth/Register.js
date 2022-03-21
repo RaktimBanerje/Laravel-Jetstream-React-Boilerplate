@@ -5,7 +5,7 @@ const Register = (props) => {
 
   const { errors, status } = props
   
-  const {processing, setData, post, reset} = useForm({
+  const {processing, data, setData, post, reset} = useForm({
     name: '',
     email: '',
     password: '',
@@ -60,26 +60,57 @@ const Register = (props) => {
 
                       <div class="form-outline mb-4">
                         <label class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control form-control-lg" onChange={e => setData("name", e.target.value)}/>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          name="name" 
+                          class="form-control form-control-lg" 
+                          value={data.name}
+                          onChange={e => setData("name", e.target.value)}
+                        />
                       </div>
 
                       <div class="form-outline mb-4">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control form-control-lg" onChange={e => setData("email", e.target.value)} autoComplete="username" />
+                        <input 
+                          type="email" 
+                          id="email" 
+                          name="email" 
+                          class="form-control form-control-lg" 
+                          value={data.email}
+                          onChange={e => setData("email", e.target.value)} autoComplete="username" 
+                        />
                       </div>
 
                       <div class="form-outline mb-4">
                         <label class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control form-control-lg" onChange={e => setData("password", e.target.value)} autoComplete="new-password" />
+                        <input 
+                          type="password" 
+                          id="password" 
+                          name="password" 
+                          class="form-control form-control-lg" 
+                          value={data.password}
+                          onChange={e => setData("password", e.target.value)} autoComplete="new-password" 
+                        />
                       </div>
 
                       <div class="form-outline mb-4">
                         <label class="form-label">Repeat password</label>
-                        <input type="password" name="password_confirmation" class="form-control form-control-lg" onChange={e => setData("password_confirmation", e.target.value)} autoComplete="new-password" />
+                        <input 
+                          type="password" 
+                          id="password_confirmation" 
+                          name="password_confirmation" 
+                          class="form-control form-control-lg"
+                          value={data.password_confirmation} 
+                          onChange={e => setData("password_confirmation", e.target.value)} autoComplete="new-password" 
+                        />
                       </div>
 
                       <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" disabled={processing}>Register</button>
+                        <button 
+                          type="submit" 
+                          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" 
+                          disabled={processing}>Register</button>
                       </div>
 
                       <p class="text-center text-muted mt-5 mb-0">Have already an account? <Link href={route("login")} class="fw-bold text-body"><u>Login here</u></Link></p>

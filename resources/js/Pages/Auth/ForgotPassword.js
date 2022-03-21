@@ -5,7 +5,7 @@ const ForgotPassword = (props) => {
 
     const { errors, status } = props
 
-    const {processing, setData, post} = useForm({email: ''})
+    const { processing, data, setData, post } = useForm({email: ''})
     
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -56,7 +56,15 @@ const ForgotPassword = (props) => {
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control form-control-lg" onChange={e => setData("email", e.target.value)} autofocus />
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email" 
+                                                class="form-control form-control-lg"
+                                                value={data.email} 
+                                                onChange={e => setData("email", e.target.value)} 
+                                                autofocus 
+                                            />
                                         </div>
 
                                         <div class="d-flex justify-content-center">

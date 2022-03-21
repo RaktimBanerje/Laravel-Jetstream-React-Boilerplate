@@ -3,11 +3,9 @@ import { Link, useForm } from '@inertiajs/inertia-react'
 
 const VerifyEmail = (props) => {
 
-    console.log(props)
-
     const { status } = props
 
-    const {processing, post} = useForm()
+    const { processing, post } = useForm()
       
     const handleSubmit = (event) => {
         event.preventDefault()

@@ -2124,6 +2124,7 @@ var ForgotPassword = function ForgotPassword(props) {
     email: ''
   }),
       processing = _useForm.processing,
+      data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post;
 
@@ -2196,8 +2197,10 @@ var ForgotPassword = function ForgotPassword(props) {
     "class": "form-label"
   }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "email",
+    id: "email",
     name: "email",
     "class": "form-control form-control-lg",
+    value: data.email,
     onChange: function onChange(e) {
       return setData("email", e.target.value);
     },
@@ -2248,6 +2251,7 @@ var Login = function Login(props) {
     remember: false
   }),
       processing = _useForm.processing,
+      data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post,
       reset = _useForm.reset,
@@ -2329,7 +2333,9 @@ var Login = function Login(props) {
     "class": "form-label"
   }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "email",
+    id: "email",
     name: "email",
+    value: data.email,
     "class": "form-control form-control-lg",
     onChange: function onChange(e) {
       return setData("email", e.target.value);
@@ -2341,7 +2347,9 @@ var Login = function Login(props) {
     "class": "form-label"
   }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
+    id: "password",
     name: "password",
+    value: data.password,
     "class": "form-control form-control-lg",
     onChange: function onChange(e) {
       return setData("password", e.target.value);
@@ -2396,6 +2404,7 @@ var Register = function Register(props) {
     terms: false
   }),
       processing = _useForm.processing,
+      data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post,
       reset = _useForm.reset;
@@ -2471,8 +2480,10 @@ var Register = function Register(props) {
     "class": "form-label"
   }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
+    id: "name",
     name: "name",
     "class": "form-control form-control-lg",
+    value: data.name,
     onChange: function onChange(e) {
       return setData("name", e.target.value);
     }
@@ -2482,8 +2493,10 @@ var Register = function Register(props) {
     "class": "form-label"
   }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "email",
+    id: "email",
     name: "email",
     "class": "form-control form-control-lg",
+    value: data.email,
     onChange: function onChange(e) {
       return setData("email", e.target.value);
     },
@@ -2494,8 +2507,10 @@ var Register = function Register(props) {
     "class": "form-label"
   }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
+    id: "password",
     name: "password",
     "class": "form-control form-control-lg",
+    value: data.password,
     onChange: function onChange(e) {
       return setData("password", e.target.value);
     },
@@ -2506,8 +2521,10 @@ var Register = function Register(props) {
     "class": "form-label"
   }, "Repeat password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
+    id: "password_confirmation",
     name: "password_confirmation",
     "class": "form-control form-control-lg",
+    value: data.password_confirmation,
     onChange: function onChange(e) {
       return setData("password_confirmation", e.target.value);
     },
@@ -2559,6 +2576,7 @@ var ResetPassword = function ResetPassword(props) {
     password_confirmation: ''
   }),
       processing = _useForm.processing,
+      data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post,
       reset = _useForm.reset;
@@ -2634,8 +2652,10 @@ var ResetPassword = function ResetPassword(props) {
     "class": "form-label"
   }, "New Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
+    id: "password",
     name: "password",
     "class": "form-control form-control-lg",
+    value: data.password,
     onChange: function onChange(e) {
       return setData("password", e.target.value);
     },
@@ -2646,8 +2666,10 @@ var ResetPassword = function ResetPassword(props) {
     "class": "form-label"
   }, "Confirm Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "password",
+    id: "password_confirmation",
     name: "password_confirmation",
     "class": "form-control form-control-lg",
+    value: data.password_confirmation,
     onChange: function onChange(e) {
       return setData("password_confirmation", e.target.value);
     },
@@ -2692,7 +2714,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VerifyEmail = function VerifyEmail(props) {
-  console.log(props);
   var status = props.status;
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
@@ -2780,10 +2801,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
 
 
 var Dashboard = function Dashboard() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Dashboard");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Dashboard"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: route('profile.show')
+  }, "Profile"));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dashboard);
@@ -2809,6 +2834,420 @@ var PrivacyPolicy = function PrivacyPolicy() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PrivacyPolicy);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Partials/DeleteUserForm.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Profile/Partials/DeleteUserForm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+
+
+var DeleteUserForm = function DeleteUserForm(props) {
+  var password_ref = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+  var form = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    password: ''
+  });
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    form["delete"](route('current-user.destroy'), {
+      preserveScroll: true,
+      onSuccess: function onSuccess() {
+        return document.getElementById("closeBtn").click();
+      },
+      onError: function onError() {
+        return password_ref.current.focus();
+      },
+      onFinish: function onFinish() {
+        return form.reset();
+      }
+    });
+  };
+
+  var closeModal = function closeModal() {
+    form.reset();
+    form.clearErrors();
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "row my-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Delete Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Permanently delete your account.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-8 border border-secondary p-3",
+    style: {
+      backgroundColor: "#ffffff",
+      boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "btn btn-danger",
+    "data-toggle": "modal",
+    "data-target": "#deleteModal"
+  }, "Delete Account"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal fade",
+    id: "deleteModal",
+    "data-backdrop": "static",
+    "data-keyboard": "false"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal-dialog modal-lg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+    "class": "modal-title"
+  }, "Delete Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "modal",
+    onClick: closeModal
+  }, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal-body"
+  }, "Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    id: "password",
+    name: "password",
+    "class": "form-control form-control-lg",
+    placeholder: "Password",
+    ref: password_ref,
+    value: form.data.password,
+    onChange: function onChange(e) {
+      return form.setData("password", e.target.value);
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "invalid-feedback d-block"
+  }, form.errors.password))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "modal-footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    id: "closeBtn",
+    "class": "btn btn-dark",
+    "data-dismiss": "modal",
+    onClick: closeModal
+  }, "Close"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "class": "btn btn-danger"
+  }, "Delete Account")))))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DeleteUserForm);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.js ***!
+  \*******************************************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Partials/TwoFactorAuthenticationForm.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/Profile/Partials/TwoFactorAuthenticationForm.js ***!
+  \****************************************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Partials/UpdatePasswordForm.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Pages/Profile/Partials/UpdatePasswordForm.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+
+
+
+var UpdatePasswordForm = function UpdatePasswordForm(props) {
+  var password_ref = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+  var current_password_ref = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+  var form = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    current_password: '',
+    password: '',
+    password_confirmation: ''
+  });
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    form.put(route('user-password.update'), {
+      errorBag: 'updatePassword',
+      preserveScroll: true,
+      onSuccess: function onSuccess() {
+        return form.reset();
+      },
+      onError: function onError() {
+        if (form.errors.password) {
+          form.reset('password', 'password_confirmation');
+          password_ref.current.focus();
+        }
+
+        if (form.errors.current_password) {
+          form.reset('current_password');
+          current_password_ref.current.focus();
+        }
+      }
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "row my-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Update Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Ensure your account is using a long, random password to stay secure.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-8 border border-secondary p-3",
+    style: {
+      backgroundColor: "#ffffff",
+      boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "Current Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    id: "current_password",
+    name: "current_password",
+    "class": "form-control form-control-lg",
+    ref: current_password_ref,
+    value: form.data.current_password,
+    onChange: function onChange(e) {
+      return form.setData("current_password", e.target.value);
+    },
+    autoComplete: "current-password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-block invalid-feedback"
+  }, form.errors.current_password)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "New Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    id: "password",
+    name: "password",
+    "class": "form-control form-control-lg",
+    ref: password_ref,
+    value: form.data.password,
+    onChange: function onChange(e) {
+      return form.setData("password", e.target.value);
+    },
+    autoComplete: "new-password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-block invalid-feedback"
+  }, form.errors.password)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "Confirm Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "password",
+    id: "password_confirmation",
+    name: "password_confirmation",
+    "class": "form-control form-control-lg",
+    value: form.data.password_confirmation,
+    onChange: function onChange(e) {
+      return form.setData("password_confirmation", e.target.value);
+    },
+    autoComplete: "new-password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-block invalid-feedback"
+  }, form.errors.password_confirmation))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-flex justify-content-end"
+  }, form.recentlySuccessful && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    style: {
+      marginTop: "15px",
+      marginRight: "15px"
+    }
+  }, "Saved."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "class": "btn btn-dark",
+    disabled: form.processing
+  }, "Save")))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UpdatePasswordForm);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var UpdateProfileInformationForm = function UpdateProfileInformationForm(props) {
+  var user = props.user;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(null),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      photoPreview = _React$useState2[0],
+      setPhotoPreview = _React$useState2[1];
+
+  var form = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    _method: 'PUT',
+    name: user.name,
+    email: user.email,
+    photo: null
+  });
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    form.post(route('user-profile-information.update'), {
+      errorBag: 'updateProfileInformation',
+      preserveScroll: true // onSuccess: () => (this.clearPhotoFileInput()),
+
+    });
+  }; // const updateProfileInformation = () => {}
+  // const selectNewPhoto = () => {}
+  // const updatePhotoPreview = () => {}
+  // const deletePhoto = () => {}
+  // const clearPhotoFileInput = () => {}
+
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "row my-4 "
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Profile Information"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Update your account's profile information and email address.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "col-sm-8 border border-secondary p-3",
+    style: {
+      backgroundColor: "#ffffff",
+      boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "name",
+    name: "name",
+    "class": "form-control form-control-lg",
+    value: form.data.name,
+    onChange: function onChange(e) {
+      return form.setData("name", e.target.value);
+    },
+    autoComplete: "name"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "invalid-feedback"
+  }, form.errors.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "form-outline mb-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "class": "form-label"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "email",
+    id: "email",
+    name: "email",
+    "class": "form-control form-control-lg",
+    value: form.data.email,
+    onChange: function onChange(e) {
+      return form.setData("email", e.target.value);
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "invalid-feedback"
+  }, form.errors.email))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "d-flex justify-content-end"
+  }, form.recentlySuccessful && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    style: {
+      marginTop: "15px",
+      marginRight: "15px"
+    }
+  }, "Saved."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "class": "btn btn-dark",
+    disabled: form.processing
+  }, "Save")))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UpdateProfileInformationForm);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Profile/Show.js":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Profile/Show.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Partials_UpdatePasswordForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Partials/UpdatePasswordForm */ "./resources/js/Pages/Profile/Partials/UpdatePasswordForm.js");
+/* harmony import */ var _Partials_UpdateProfileInformationForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Partials/UpdateProfileInformationForm */ "./resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.js");
+/* harmony import */ var _Partials_DeleteUserForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Partials/DeleteUserForm */ "./resources/js/Pages/Profile/Partials/DeleteUserForm.js");
+
+
+
+
+
+var Show = function Show(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "class": "mt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Partials_UpdateProfileInformationForm__WEBPACK_IMPORTED_MODULE_2__["default"], props), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Partials_UpdatePasswordForm__WEBPACK_IMPORTED_MODULE_1__["default"], props), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Partials_DeleteUserForm__WEBPACK_IMPORTED_MODULE_3__["default"], props)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Show);
 
 /***/ }),
 
@@ -54849,6 +55288,18 @@ var map = {
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./PrivacyPolicy": "./resources/js/Pages/PrivacyPolicy.js",
 	"./PrivacyPolicy.js": "./resources/js/Pages/PrivacyPolicy.js",
+	"./Profile/Partials/DeleteUserForm": "./resources/js/Pages/Profile/Partials/DeleteUserForm.js",
+	"./Profile/Partials/DeleteUserForm.js": "./resources/js/Pages/Profile/Partials/DeleteUserForm.js",
+	"./Profile/Partials/LogoutOtherBrowserSessionsForm": "./resources/js/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.js",
+	"./Profile/Partials/LogoutOtherBrowserSessionsForm.js": "./resources/js/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.js",
+	"./Profile/Partials/TwoFactorAuthenticationForm": "./resources/js/Pages/Profile/Partials/TwoFactorAuthenticationForm.js",
+	"./Profile/Partials/TwoFactorAuthenticationForm.js": "./resources/js/Pages/Profile/Partials/TwoFactorAuthenticationForm.js",
+	"./Profile/Partials/UpdatePasswordForm": "./resources/js/Pages/Profile/Partials/UpdatePasswordForm.js",
+	"./Profile/Partials/UpdatePasswordForm.js": "./resources/js/Pages/Profile/Partials/UpdatePasswordForm.js",
+	"./Profile/Partials/UpdateProfileInformationForm": "./resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.js",
+	"./Profile/Partials/UpdateProfileInformationForm.js": "./resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.js",
+	"./Profile/Show": "./resources/js/Pages/Profile/Show.js",
+	"./Profile/Show.js": "./resources/js/Pages/Profile/Show.js",
 	"./TermsOfService": "./resources/js/Pages/TermsOfService.js",
 	"./TermsOfService.js": "./resources/js/Pages/TermsOfService.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
